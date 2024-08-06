@@ -1,0 +1,23 @@
+* Spell-time
+A dead simple shell script for spelling out the time. Spelled without numbers and like how it is said out loud in speech.
+
+It violates DRY and every other philosophy for clean code, but it works so it works and I don't care :p
+** Installation
+~spell-time.sh~ is a standalone bash script. Run ~./spell-time.sh~ with no arguments to get the current time in words as stdout.
+** Format
+ - Twelve hour clock
+ - "Past" and "to" notation
+   - E.g. =half past five=, =ten to five=
+ - "At" for top of the hour
+   - Extremely unnatural but I wanted the hour to come after and the minutes at the front
+ - Rounds to the nearest 5 minutes
+   - The words are shorter and less updates per hour are needed to be accurate
+** Example Usage
+My use for this is to display the time in words in my polybar taskbar:
+#+BEGIN_SRC toml
+  [module/spelltime]
+  type = custom/script
+  exec = <PATH-TO-SPELL-TIME>/spelltime.sh
+  interval = 60
+#+END_SRC
+Updating every minute means the display does not change with precision, but this module is very imprecise anyways so I don't mind.
