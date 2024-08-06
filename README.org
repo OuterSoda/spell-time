@@ -14,7 +14,7 @@ It violates DRY and every other philosophy for clean code, but it works so it wo
    - The words are shorter and less updates per hour are needed to be accurate
 ** Example Usage
 My use for this is to display the time in words in my polybar taskbar:
-#+BEGIN_SRC toml
+#+BEGIN_SRC
   [module/spelltime]
   type = custom/script
   exec = [PATH-TO-SPELL-TIME]/spelltime.sh
