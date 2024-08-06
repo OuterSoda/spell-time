@@ -17,7 +17,7 @@ My use for this is to display the time in words in my polybar taskbar:
 #+BEGIN_SRC toml
   [module/spelltime]
   type = custom/script
-  exec = <PATH-TO-SPELL-TIME>/spelltime.sh
+  exec = [PATH-TO-SPELL-TIME]/spelltime.sh
   interval = 60
 #+END_SRC
 Updating every minute means the display does not change with precision, but this module is very imprecise anyways so I don't mind.
